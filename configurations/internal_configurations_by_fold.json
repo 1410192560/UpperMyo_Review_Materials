@@ -1,0 +1,1110 @@
+{
+  "meta": {
+    "total_trials": 2640,
+    "subjects": 24,
+    "classes": [
+      "zq",
+      "zqq",
+      "zsz",
+      "wsz",
+      "wns",
+      "wwz",
+      "wq",
+      "wqq",
+      "none"
+    ],
+    "dataset": "phase5 nine-class dataset (eight valid actions plus an explicit none class)",
+    "duplicate_policy": "all trials retained as normal observations",
+    "protocol": "outer LOSO with inner LOSO hyperparameter selection; all fitted preprocessing is restricted to the corresponding training subjects",
+    "model_protocols": {
+      "LDA": "strict source-only nested LOSO",
+      "SVM": "strict source-only nested LOSO",
+      "RF": "strict source-only nested LOSO",
+      "CNN": "strict source-only nested LOSO",
+      "CORAL": "transductive nested LOSO; unlabeled target-fold signals are visible for covariance alignment",
+      "ProtoNet": "strict source-only nested LOSO with disjoint support/query samples during prototype training"
+    },
+    "selection_metric": "mean inner-subject Macro-F1",
+    "device": "cuda",
+    "seed": 42,
+    "deep_inner_budget": "one deterministic trial per training subject/label/source; full validation subject; reduced inner epochs; full outer-training data and final epochs for outer fit",
+    "rf_inner_budget": "200 trees for candidate screening; 800 trees for selected outer fit",
+    "smoke": false,
+    "search_space": {
+      "LDA": [
+        {
+          "solver": "svd",
+          "shrinkage": null
+        },
+        {
+          "solver": "lsqr",
+          "shrinkage": "auto"
+        }
+      ],
+      "SVM": [
+        {
+          "C": 10.0,
+          "gamma": "scale"
+        },
+        {
+          "C": 30.0,
+          "gamma": "scale"
+        },
+        {
+          "C": 100.0,
+          "gamma": "scale"
+        }
+      ],
+      "RF": [
+        {
+          "n_estimators": 800,
+          "max_depth": null,
+          "min_samples_leaf": 1
+        },
+        {
+          "n_estimators": 800,
+          "max_depth": 20,
+          "min_samples_leaf": 2
+        }
+      ],
+      "CNN": [
+        {
+          "lr": 0.001,
+          "weight_decay": 1e-05,
+          "dropout": 0.2,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 10,
+          "final_epochs": 120
+        },
+        {
+          "lr": 0.0003,
+          "weight_decay": 0.0001,
+          "dropout": 0.3,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 10,
+          "final_epochs": 120
+        }
+      ],
+      "CORAL": [
+        {
+          "lr": 0.001,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        },
+        {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        }
+      ],
+      "ProtoNet": [
+        {
+          "lr": 0.001,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        },
+        {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        }
+      ]
+    }
+  },
+  "selected_configurations": [
+    {
+      "subject": 1,
+      "models": {
+        "LDA": {
+          "solver": "svd",
+          "shrinkage": null
+        },
+        "SVM": {
+          "C": 30.0,
+          "gamma": "scale"
+        },
+        "RF": {
+          "n_estimators": 800,
+          "max_depth": null,
+          "min_samples_leaf": 1
+        },
+        "CNN": {
+          "lr": 0.001,
+          "weight_decay": 1e-05,
+          "dropout": 0.2,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 10,
+          "final_epochs": 120
+        },
+        "CORAL": {
+          "lr": 0.001,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        },
+        "ProtoNet": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        }
+      }
+    },
+    {
+      "subject": 2,
+      "models": {
+        "LDA": {
+          "solver": "svd",
+          "shrinkage": null
+        },
+        "SVM": {
+          "C": 30.0,
+          "gamma": "scale"
+        },
+        "RF": {
+          "n_estimators": 800,
+          "max_depth": 20,
+          "min_samples_leaf": 2
+        },
+        "CNN": {
+          "lr": 0.001,
+          "weight_decay": 1e-05,
+          "dropout": 0.2,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 10,
+          "final_epochs": 120
+        },
+        "CORAL": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        },
+        "ProtoNet": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        }
+      }
+    },
+    {
+      "subject": 3,
+      "models": {
+        "LDA": {
+          "solver": "svd",
+          "shrinkage": null
+        },
+        "SVM": {
+          "C": 30.0,
+          "gamma": "scale"
+        },
+        "RF": {
+          "n_estimators": 800,
+          "max_depth": null,
+          "min_samples_leaf": 1
+        },
+        "CNN": {
+          "lr": 0.001,
+          "weight_decay": 1e-05,
+          "dropout": 0.2,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 10,
+          "final_epochs": 120
+        },
+        "CORAL": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        },
+        "ProtoNet": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        }
+      }
+    },
+    {
+      "subject": 4,
+      "models": {
+        "LDA": {
+          "solver": "svd",
+          "shrinkage": null
+        },
+        "SVM": {
+          "C": 30.0,
+          "gamma": "scale"
+        },
+        "RF": {
+          "n_estimators": 800,
+          "max_depth": null,
+          "min_samples_leaf": 1
+        },
+        "CNN": {
+          "lr": 0.001,
+          "weight_decay": 1e-05,
+          "dropout": 0.2,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 10,
+          "final_epochs": 120
+        },
+        "CORAL": {
+          "lr": 0.001,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        },
+        "ProtoNet": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        }
+      }
+    },
+    {
+      "subject": 5,
+      "models": {
+        "LDA": {
+          "solver": "svd",
+          "shrinkage": null
+        },
+        "SVM": {
+          "C": 30.0,
+          "gamma": "scale"
+        },
+        "RF": {
+          "n_estimators": 800,
+          "max_depth": null,
+          "min_samples_leaf": 1
+        },
+        "CNN": {
+          "lr": 0.001,
+          "weight_decay": 1e-05,
+          "dropout": 0.2,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 10,
+          "final_epochs": 120
+        },
+        "CORAL": {
+          "lr": 0.001,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        },
+        "ProtoNet": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        }
+      }
+    },
+    {
+      "subject": 6,
+      "models": {
+        "LDA": {
+          "solver": "svd",
+          "shrinkage": null
+        },
+        "SVM": {
+          "C": 30.0,
+          "gamma": "scale"
+        },
+        "RF": {
+          "n_estimators": 800,
+          "max_depth": 20,
+          "min_samples_leaf": 2
+        },
+        "CNN": {
+          "lr": 0.001,
+          "weight_decay": 1e-05,
+          "dropout": 0.2,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 10,
+          "final_epochs": 120
+        },
+        "CORAL": {
+          "lr": 0.001,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        },
+        "ProtoNet": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        }
+      }
+    },
+    {
+      "subject": 7,
+      "models": {
+        "LDA": {
+          "solver": "svd",
+          "shrinkage": null
+        },
+        "SVM": {
+          "C": 10.0,
+          "gamma": "scale"
+        },
+        "RF": {
+          "n_estimators": 800,
+          "max_depth": 20,
+          "min_samples_leaf": 2
+        },
+        "CNN": {
+          "lr": 0.001,
+          "weight_decay": 1e-05,
+          "dropout": 0.2,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 10,
+          "final_epochs": 120
+        },
+        "CORAL": {
+          "lr": 0.001,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        },
+        "ProtoNet": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        }
+      }
+    },
+    {
+      "subject": 8,
+      "models": {
+        "LDA": {
+          "solver": "svd",
+          "shrinkage": null
+        },
+        "SVM": {
+          "C": 30.0,
+          "gamma": "scale"
+        },
+        "RF": {
+          "n_estimators": 800,
+          "max_depth": null,
+          "min_samples_leaf": 1
+        },
+        "CNN": {
+          "lr": 0.001,
+          "weight_decay": 1e-05,
+          "dropout": 0.2,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 10,
+          "final_epochs": 120
+        },
+        "CORAL": {
+          "lr": 0.001,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        },
+        "ProtoNet": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        }
+      }
+    },
+    {
+      "subject": 9,
+      "models": {
+        "LDA": {
+          "solver": "svd",
+          "shrinkage": null
+        },
+        "SVM": {
+          "C": 10.0,
+          "gamma": "scale"
+        },
+        "RF": {
+          "n_estimators": 800,
+          "max_depth": null,
+          "min_samples_leaf": 1
+        },
+        "CNN": {
+          "lr": 0.001,
+          "weight_decay": 1e-05,
+          "dropout": 0.2,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 10,
+          "final_epochs": 120
+        },
+        "CORAL": {
+          "lr": 0.001,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        },
+        "ProtoNet": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        }
+      }
+    },
+    {
+      "subject": 10,
+      "models": {
+        "LDA": {
+          "solver": "svd",
+          "shrinkage": null
+        },
+        "SVM": {
+          "C": 30.0,
+          "gamma": "scale"
+        },
+        "RF": {
+          "n_estimators": 800,
+          "max_depth": 20,
+          "min_samples_leaf": 2
+        },
+        "CNN": {
+          "lr": 0.001,
+          "weight_decay": 1e-05,
+          "dropout": 0.2,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 10,
+          "final_epochs": 120
+        },
+        "CORAL": {
+          "lr": 0.001,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        },
+        "ProtoNet": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        }
+      }
+    },
+    {
+      "subject": 11,
+      "models": {
+        "LDA": {
+          "solver": "svd",
+          "shrinkage": null
+        },
+        "SVM": {
+          "C": 30.0,
+          "gamma": "scale"
+        },
+        "RF": {
+          "n_estimators": 800,
+          "max_depth": null,
+          "min_samples_leaf": 1
+        },
+        "CNN": {
+          "lr": 0.001,
+          "weight_decay": 1e-05,
+          "dropout": 0.2,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 10,
+          "final_epochs": 120
+        },
+        "CORAL": {
+          "lr": 0.001,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        },
+        "ProtoNet": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        }
+      }
+    },
+    {
+      "subject": 12,
+      "models": {
+        "LDA": {
+          "solver": "svd",
+          "shrinkage": null
+        },
+        "SVM": {
+          "C": 100.0,
+          "gamma": "scale"
+        },
+        "RF": {
+          "n_estimators": 800,
+          "max_depth": null,
+          "min_samples_leaf": 1
+        },
+        "CNN": {
+          "lr": 0.001,
+          "weight_decay": 1e-05,
+          "dropout": 0.2,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 10,
+          "final_epochs": 120
+        },
+        "CORAL": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        },
+        "ProtoNet": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        }
+      }
+    },
+    {
+      "subject": 13,
+      "models": {
+        "LDA": {
+          "solver": "svd",
+          "shrinkage": null
+        },
+        "SVM": {
+          "C": 10.0,
+          "gamma": "scale"
+        },
+        "RF": {
+          "n_estimators": 800,
+          "max_depth": null,
+          "min_samples_leaf": 1
+        },
+        "CNN": {
+          "lr": 0.001,
+          "weight_decay": 1e-05,
+          "dropout": 0.2,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 10,
+          "final_epochs": 120
+        },
+        "CORAL": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        },
+        "ProtoNet": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        }
+      }
+    },
+    {
+      "subject": 14,
+      "models": {
+        "LDA": {
+          "solver": "svd",
+          "shrinkage": null
+        },
+        "SVM": {
+          "C": 10.0,
+          "gamma": "scale"
+        },
+        "RF": {
+          "n_estimators": 800,
+          "max_depth": 20,
+          "min_samples_leaf": 2
+        },
+        "CNN": {
+          "lr": 0.001,
+          "weight_decay": 1e-05,
+          "dropout": 0.2,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 10,
+          "final_epochs": 120
+        },
+        "CORAL": {
+          "lr": 0.001,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        },
+        "ProtoNet": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        }
+      }
+    },
+    {
+      "subject": 15,
+      "models": {
+        "LDA": {
+          "solver": "svd",
+          "shrinkage": null
+        },
+        "SVM": {
+          "C": 100.0,
+          "gamma": "scale"
+        },
+        "RF": {
+          "n_estimators": 800,
+          "max_depth": null,
+          "min_samples_leaf": 1
+        },
+        "CNN": {
+          "lr": 0.001,
+          "weight_decay": 1e-05,
+          "dropout": 0.2,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 10,
+          "final_epochs": 120
+        },
+        "CORAL": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        },
+        "ProtoNet": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        }
+      }
+    },
+    {
+      "subject": 16,
+      "models": {
+        "LDA": {
+          "solver": "svd",
+          "shrinkage": null
+        },
+        "SVM": {
+          "C": 30.0,
+          "gamma": "scale"
+        },
+        "RF": {
+          "n_estimators": 800,
+          "max_depth": 20,
+          "min_samples_leaf": 2
+        },
+        "CNN": {
+          "lr": 0.001,
+          "weight_decay": 1e-05,
+          "dropout": 0.2,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 10,
+          "final_epochs": 120
+        },
+        "CORAL": {
+          "lr": 0.001,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        },
+        "ProtoNet": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        }
+      }
+    },
+    {
+      "subject": 17,
+      "models": {
+        "LDA": {
+          "solver": "svd",
+          "shrinkage": null
+        },
+        "SVM": {
+          "C": 10.0,
+          "gamma": "scale"
+        },
+        "RF": {
+          "n_estimators": 800,
+          "max_depth": null,
+          "min_samples_leaf": 1
+        },
+        "CNN": {
+          "lr": 0.001,
+          "weight_decay": 1e-05,
+          "dropout": 0.2,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 10,
+          "final_epochs": 120
+        },
+        "CORAL": {
+          "lr": 0.001,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        },
+        "ProtoNet": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        }
+      }
+    },
+    {
+      "subject": 18,
+      "models": {
+        "LDA": {
+          "solver": "svd",
+          "shrinkage": null
+        },
+        "SVM": {
+          "C": 30.0,
+          "gamma": "scale"
+        },
+        "RF": {
+          "n_estimators": 800,
+          "max_depth": null,
+          "min_samples_leaf": 1
+        },
+        "CNN": {
+          "lr": 0.001,
+          "weight_decay": 1e-05,
+          "dropout": 0.2,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 10,
+          "final_epochs": 120
+        },
+        "CORAL": {
+          "lr": 0.001,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        },
+        "ProtoNet": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        }
+      }
+    },
+    {
+      "subject": 19,
+      "models": {
+        "LDA": {
+          "solver": "svd",
+          "shrinkage": null
+        },
+        "SVM": {
+          "C": 30.0,
+          "gamma": "scale"
+        },
+        "RF": {
+          "n_estimators": 800,
+          "max_depth": null,
+          "min_samples_leaf": 1
+        },
+        "CNN": {
+          "lr": 0.001,
+          "weight_decay": 1e-05,
+          "dropout": 0.2,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 10,
+          "final_epochs": 120
+        },
+        "CORAL": {
+          "lr": 0.001,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        },
+        "ProtoNet": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        }
+      }
+    },
+    {
+      "subject": 20,
+      "models": {
+        "LDA": {
+          "solver": "svd",
+          "shrinkage": null
+        },
+        "SVM": {
+          "C": 30.0,
+          "gamma": "scale"
+        },
+        "RF": {
+          "n_estimators": 800,
+          "max_depth": null,
+          "min_samples_leaf": 1
+        },
+        "CNN": {
+          "lr": 0.001,
+          "weight_decay": 1e-05,
+          "dropout": 0.2,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 10,
+          "final_epochs": 120
+        },
+        "CORAL": {
+          "lr": 0.001,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        },
+        "ProtoNet": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        }
+      }
+    },
+    {
+      "subject": 21,
+      "models": {
+        "LDA": {
+          "solver": "svd",
+          "shrinkage": null
+        },
+        "SVM": {
+          "C": 100.0,
+          "gamma": "scale"
+        },
+        "RF": {
+          "n_estimators": 800,
+          "max_depth": null,
+          "min_samples_leaf": 1
+        },
+        "CNN": {
+          "lr": 0.001,
+          "weight_decay": 1e-05,
+          "dropout": 0.2,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 10,
+          "final_epochs": 120
+        },
+        "CORAL": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        },
+        "ProtoNet": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        }
+      }
+    },
+    {
+      "subject": 22,
+      "models": {
+        "LDA": {
+          "solver": "svd",
+          "shrinkage": null
+        },
+        "SVM": {
+          "C": 30.0,
+          "gamma": "scale"
+        },
+        "RF": {
+          "n_estimators": 800,
+          "max_depth": null,
+          "min_samples_leaf": 1
+        },
+        "CNN": {
+          "lr": 0.001,
+          "weight_decay": 1e-05,
+          "dropout": 0.2,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 10,
+          "final_epochs": 120
+        },
+        "CORAL": {
+          "lr": 0.001,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        },
+        "ProtoNet": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        }
+      }
+    },
+    {
+      "subject": 23,
+      "models": {
+        "LDA": {
+          "solver": "svd",
+          "shrinkage": null
+        },
+        "SVM": {
+          "C": 10.0,
+          "gamma": "scale"
+        },
+        "RF": {
+          "n_estimators": 800,
+          "max_depth": null,
+          "min_samples_leaf": 1
+        },
+        "CNN": {
+          "lr": 0.001,
+          "weight_decay": 1e-05,
+          "dropout": 0.2,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 10,
+          "final_epochs": 120
+        },
+        "CORAL": {
+          "lr": 0.001,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        },
+        "ProtoNet": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        }
+      }
+    },
+    {
+      "subject": 24,
+      "models": {
+        "LDA": {
+          "solver": "svd",
+          "shrinkage": null
+        },
+        "SVM": {
+          "C": 30.0,
+          "gamma": "scale"
+        },
+        "RF": {
+          "n_estimators": 800,
+          "max_depth": null,
+          "min_samples_leaf": 1
+        },
+        "CNN": {
+          "lr": 0.001,
+          "weight_decay": 1e-05,
+          "dropout": 0.2,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 10,
+          "final_epochs": 120
+        },
+        "CORAL": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        },
+        "ProtoNet": {
+          "lr": 0.0003,
+          "inner_batch_size": 256,
+          "final_batch_size": 64,
+          "inner_epochs": 6,
+          "final_epochs": 40
+        }
+      }
+    }
+  ]
+}

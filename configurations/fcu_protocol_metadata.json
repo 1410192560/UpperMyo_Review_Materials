@@ -1,0 +1,39 @@
+{
+  "status": "corrected_source_prespecified_blind_test_rerun_no_test_guided_tuning",
+  "test_used": true,
+  "final_train_subjects": [
+    "dp",
+    "lm",
+    "ln",
+    "lb",
+    "md",
+    "ds",
+    "ac",
+    "ss",
+    "js",
+    "mm"
+  ],
+  "evaluation_subjects": [
+    "nk",
+    "pb",
+    "lk"
+  ],
+  "locked_test_subjects": [
+    "nk",
+    "pb",
+    "lk"
+  ],
+  "seed": 20260907,
+  "device": "cuda",
+  "cache_sha256": "0A1CC1C2CA1F55781FF4955E698A2CF5394C89D3A32EB8A5F9BF06E073AB6E14",
+  "source_checkpoint_sha256": "71BCD2264543776D82D43D34972E326A15FC947F4DD3C14178D2F6E98DBE577C",
+  "source_dataset_sha256": "69111AE9E4FE92494B1519ED12B877C0D376FDA3290355968500126F8BD380A9",
+  "fixed_optimizer_steps_per_arm": 400,
+  "transfer_load": "full",
+  "training_mode": "end_to_end",
+  "force_scaling": "selected_standardization",
+  "sampling": "nested exact total labeled windows balanced across subjects/records/time; force-label blind",
+  "windows_per_budget_unit": 1,
+  "model": "fixed 0.5 raw-neural + 0.5 ExtraTrees at every budget",
+  "fairness": "same selection, architecture, steps, optimizer and fusion for TO/FT; source initialization is the only difference"
+}

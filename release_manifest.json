@@ -1,0 +1,324 @@
+{
+  "materials": "UpperMyo Review Materials",
+  "packaged_on": "2026-11-03",
+  "source_snapshot": "revised UpperMyo manuscript; preserved benchmark results and indices",
+  "training_rerun_performed": false,
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 33,
+      "sha256": "d8e5a484c802ce49d3c8d38e2f94b9b2fdaacd58a271c7c906f63a253bc32989",
+      "origin": "repository packaging documentation or verification utility"
+    },
+    {
+      "path": "configurations/data_dictionary.json",
+      "bytes": 695,
+      "sha256": "1b17cae8f7497c0b4db4d56005d1dd1eb48e9d37e563a5a281ab595d0ccbe9b3",
+      "source_file": "data_dictionary.json",
+      "source_sha256": "1b17cae8f7497c0b4db4d56005d1dd1eb48e9d37e563a5a281ab595d0ccbe9b3",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "path": "configurations/fcu_protocol_metadata.json",
+      "bytes": 1206,
+      "sha256": "d1f1c38744796a1053ad13061d46d39514853d3b2a525c9fd4e9cec7b29cd56d",
+      "source_file": "fcu_protocol_metadata.json",
+      "source_sha256": "d1f1c38744796a1053ad13061d46d39514853d3b2a525c9fd4e9cec7b29cd56d",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "path": "configurations/fixed_ablation_protocol.json",
+      "bytes": 2106,
+      "sha256": "0a96e471df50da1508f2845beb759fa98f3a08f10c42eac53187e25574c5ee63",
+      "source_file": "fixed_ablation_protocol.json",
+      "source_sha256": "0a96e471df50da1508f2845beb759fa98f3a08f10c42eac53187e25574c5ee63",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "path": "configurations/internal_configurations_by_fold.json",
+      "bytes": 26961,
+      "sha256": "e2163c78fc106cfa9aa77a936f2d1c0060b54d557b21bb11fcbe08d37df32a72",
+      "source_file": "internal_configurations_by_fold.json",
+      "source_sha256": "e2163c78fc106cfa9aa77a936f2d1c0060b54d557b21bb11fcbe08d37df32a72",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "path": "configurations/internal_selected_configuration_counts.csv",
+      "bytes": 918,
+      "sha256": "106facc2dbde7432c4f0bc067470beef040e8ffffef0c2c5ca79cf0bf54a86b1",
+      "source_file": "internal_selected_configuration_counts.csv",
+      "source_sha256": "106facc2dbde7432c4f0bc067470beef040e8ffffef0c2c5ca79cf0bf54a86b1",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "path": "configurations/temporal_final_config.json",
+      "bytes": 3436,
+      "sha256": "b482afba061b7ed555c698ba616f4013c30c1658a260bc912e843d50edf70d00",
+      "source_file": "temporal_final_config.json",
+      "source_sha256": "8fbedfa425d6595f52f4904daa2626dd3a1b67dbae7e35c7b00bb6a19e2a8c5f",
+      "transformation": "Packaging metadata normalized; processing, model and fitting settings preserved; output paths remain repository-relative."
+    },
+    {
+      "path": "configurations/wrist_support_and_training_records.json",
+      "bytes": 825063,
+      "sha256": "1cb93b5cc4d816dd2db0f7626bd8972a99ae4585a822a9cef3598e06b2c1cd14",
+      "source_file": "wrist_support_and_training_records.json",
+      "source_sha256": "1cb93b5cc4d816dd2db0f7626bd8972a99ae4585a822a9cef3598e06b2c1cd14",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "path": "configurations/wrist_training_schedules.csv",
+      "bytes": 648,
+      "sha256": "fd174bd988525fac1f794909be781ba399668e0573140f36169f06848575dcad",
+      "source_file": "wrist_training_schedules.csv",
+      "source_sha256": "fd174bd988525fac1f794909be781ba399668e0573140f36169f06848575dcad",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "path": "indices/participant_class_counts.csv",
+      "bytes": 659,
+      "sha256": "d4663ae648511df682aa5bf11441f7fe0a179efeb392481eb9877866bd963044",
+      "source_file": "participant_class_counts.csv",
+      "source_sha256": "d4663ae648511df682aa5bf11441f7fe0a179efeb392481eb9877866bd963044",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "path": "indices/participant_splits.json",
+      "bytes": 12072,
+      "sha256": "1c17430854cef5350cb5dc4f671c244fa9dc6653665c297f901342d4a70ede84",
+      "source_file": "participant_splits.json",
+      "source_sha256": "1c17430854cef5350cb5dc4f671c244fa9dc6653665c297f901342d4a70ede84",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "path": "indices/record_manifest.csv",
+      "bytes": 40093,
+      "sha256": "06dc0b44023df408ac868b70cfc187c3e726a2f3666de27af2e1f9057bbf8ebf"
+    },
+    {
+      "path": "indices/sample_index.csv",
+      "bytes": 288374,
+      "sha256": "f4cb8ab1efa5e89d84119ce3800a8b60b8daa4462ecb72e3088730031ea6e817",
+      "source_file": "sample_index.csv",
+      "source_sha256": "f4cb8ab1efa5e89d84119ce3800a8b60b8daa4462ecb72e3088730031ea6e817",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "path": "indices/temporal_flexion_events.csv",
+      "bytes": 31810,
+      "sha256": "907a1ffa8b581ad2678af8bc16b538b8b3778c5d35fc8e6103b5533d7e78c81a",
+      "source_file": "temporal_flexion_events.csv",
+      "source_sha256": "40f9e89c81fb3ce098e75949d3036fc2ff3be75e6c48873348406b74ea871e40",
+      "transformation": "raw_path made repository-relative by removing only the leading 数据集/; all other field values unchanged"
+    },
+    {
+      "path": "README.md",
+      "bytes": 9037,
+      "sha256": "5058330362f87e65c280b22f0ba856713a0cfcdc5fe40e1dedfa3fba0b67ce97",
+      "origin": "repository packaging documentation or verification utility"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 76,
+      "sha256": "ee20e13c32afae7df0e6ec2b88df3ea17fc3cc3e8a2253cc4a06d8a6d2fb1497",
+      "origin": "repository packaging documentation or verification utility"
+    },
+    {
+      "path": "results/classification_paired_repeats.csv",
+      "bytes": 230548,
+      "sha256": "3051e551d6a762e9764c35af02e7bf4c93aef990ca6f075c23946fbc6aecbb32",
+      "source_file": "classification_paired_repeats.csv",
+      "source_sha256": "3051e551d6a762e9764c35af02e7bf4c93aef990ca6f075c23946fbc6aecbb32",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "path": "results/cnn_integer_confusion.csv",
+      "bytes": 275,
+      "sha256": "85a559637679d744595005a633213136e8b886a590fc8df314807a37e19d3fd1",
+      "source_file": "CNN_整数混淆矩阵.csv",
+      "source_sha256": "85a559637679d744595005a633213136e8b886a590fc8df314807a37e19d3fd1",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "path": "results/fcu_pb_seed_effects.csv",
+      "bytes": 298,
+      "sha256": "259ba21c23cfa0fccab996d7f77dd61ce38811b52a6a87eddb6baad13f53d2f2",
+      "source_file": "fcu_pb_seed_effects.csv",
+      "source_sha256": "259ba21c23cfa0fccab996d7f77dd61ce38811b52a6a87eddb6baad13f53d2f2",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "path": "results/force_error_N.csv",
+      "bytes": 728,
+      "sha256": "f3bd7271eab0e3e733017fbe32fd583aea48d0887424213d479f91b1bf26357d",
+      "source_file": "force_error_N.csv",
+      "source_sha256": "f3bd7271eab0e3e733017fbe32fd583aea48d0887424213d479f91b1bf26357d",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "path": "results/force_paired_repeats.csv",
+      "bytes": 31542,
+      "sha256": "3a32d0eae545fbe50f7cd0f6f0e8ad7abde0ca5ecf07443d0939aaa892e656f2",
+      "source_file": "force_paired_repeats.csv",
+      "source_sha256": "3a32d0eae545fbe50f7cd0f6f0e8ad7abde0ca5ecf07443d0939aaa892e656f2",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "path": "results/force_trace_selection.json",
+      "bytes": 238,
+      "sha256": "6e363f67c2dc29955f9bf78cf62b9c990524255525d4dad28234cb0eb698ace7",
+      "source_file": "force_trace_selection.json",
+      "source_sha256": "6e363f67c2dc29955f9bf78cf62b9c990524255525d4dad28234cb0eb698ace7",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "path": "results/force_trace_values.csv",
+      "bytes": 66591,
+      "sha256": "2db714bd2ad6b21b41bd66d6dbafc40c672bd8645b2d5aa0648854b1a49dc9f3",
+      "source_file": "force_trace_values.csv",
+      "source_sha256": "2db714bd2ad6b21b41bd66d6dbafc40c672bd8645b2d5aa0648854b1a49dc9f3",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "path": "results/internal_action_focused_metrics.csv",
+      "bytes": 764,
+      "sha256": "da9394eb8c5df8bd14632fcb1830ed97e243610472a2c84a219a2b9607ac515e",
+      "source_file": "内部识别_背景之外的指标.csv",
+      "source_sha256": "da9394eb8c5df8bd14632fcb1830ed97e243610472a2c84a219a2b9607ac515e",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "path": "results/internal_participant_metrics.csv",
+      "bytes": 7463,
+      "sha256": "0c9177bcd10a4422756f019d49cbdae30b49791c4dd019778a283e283580abbd",
+      "source_file": "内部识别_逐人指标.csv",
+      "source_sha256": "0c9177bcd10a4422756f019d49cbdae30b49791c4dd019778a283e283580abbd",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "path": "results/internal_predictions.csv",
+      "bytes": 58700,
+      "sha256": "c40baadfc1904a82545510def9a0df44d9502964c9e7f6244a4da42566df80ee",
+      "source_file": "internal_predictions.csv",
+      "source_sha256": "c40baadfc1904a82545510def9a0df44d9502964c9e7f6244a4da42566df80ee",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "path": "results/izmir_action_group_results.csv",
+      "bytes": 2676,
+      "sha256": "908f32c39703be9ed37db5d49ee61ad8cfe10291ec341af506715a457ae42ddb",
+      "source_file": "Izmir_四类两类三类及新五类.csv",
+      "source_sha256": "908f32c39703be9ed37db5d49ee61ad8cfe10291ec341af506715a457ae42ddb",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "path": "results/participant_paired_effects.csv",
+      "bytes": 3432,
+      "sha256": "3890e282215d4b0c58a44f9d25559e6a075a08470fa4ecf61b70ed6e2ebd6c05",
+      "source_file": "participant_paired_effects.csv",
+      "source_sha256": "3890e282215d4b0c58a44f9d25559e6a075a08470fa4ecf61b70ed6e2ebd6c05",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "path": "results/principal_effect_summary.csv",
+      "bytes": 953,
+      "sha256": "9ef9573aa372fd0f892f194d38f536a647268a9cbdc5262879188a51ef178983",
+      "source_file": "principal_effect_summary.csv",
+      "source_sha256": "9ef9573aa372fd0f892f194d38f536a647268a9cbdc5262879188a51ef178983",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "path": "results/temporal_positive_window_label_audit.csv",
+      "bytes": 198,
+      "sha256": "325a36721a8223746492551cd3f98b93ebfa5d2e953c3d09629e8b7107ab40fa",
+      "source_file": "temporal_positive_window_label_audit.csv",
+      "source_sha256": "325a36721a8223746492551cd3f98b93ebfa5d2e953c3d09629e8b7107ab40fa",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "path": "results/temporal_reported_results.csv",
+      "bytes": 429,
+      "sha256": "51033a081e3bdcc46e03384530c81893eef272c2d7d93a593c8632f06c98eb7d",
+      "source_file": "temporal_reported_results.csv",
+      "source_sha256": "6620f5c75a58495865732d25cdb0fe7a451212e29541d33bde07a71b4d4db73b",
+      "transformation": "Non-metric annotation column removed; all model, offset, mean and standard-deviation entries preserved."
+    },
+    {
+      "path": "results/training_test_budget_metrics.csv",
+      "bytes": 7647,
+      "sha256": "f0f16c31dd52571e87c1135727113dd7a82793eac7f1a398986397490b6896fe",
+      "source_file": "完整预算训练与测试汇总.csv",
+      "source_sha256": "f0f16c31dd52571e87c1135727113dd7a82793eac7f1a398986397490b6896fe",
+      "source_group": "retained_model_training_test_evaluation_20261102",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "path": "results/training_test_model_metrics.json",
+      "bytes": 594571,
+      "sha256": "fb34951b3bf55878fa229cea786d2c5f1e78e1e47f231128218df02e5759a1bd",
+      "source_file": "逐模型训练与测试成绩.json",
+      "source_sha256": "fb34951b3bf55878fa229cea786d2c5f1e78e1e47f231128218df02e5759a1bd",
+      "source_group": "retained_model_training_test_evaluation_20261102",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "path": "results/wrist_development_test_comparison.csv",
+      "bytes": 1041,
+      "sha256": "1d10f71d049325c08bde1ea5537d389734ed9d4f153b6446596547d0743c13c1",
+      "source_file": "wrist_development_test_comparison.csv",
+      "source_sha256": "1d10f71d049325c08bde1ea5537d389734ed9d4f153b6446596547d0743c13c1",
+      "transformation": "byte-identical copy"
+    },
+    {
+      "path": "scripts/evaluate_additional_results.py",
+      "bytes": 2947,
+      "sha256": "767e6c1adbf2c1459a588e99b8543a099e671e43039704f9638a53885a3532d1",
+      "source_file": "evaluate_reviewer3_additions.py",
+      "source_sha256": "e10d3967c8543a795c81bc085316ff6f9d42d3cc74e9281002417e1cd57cc826",
+      "transformation": "repository-relative input/output paths; English filenames; additional row-count checks in saved-result evaluator; numerical calculations unchanged",
+      "validation_update": "Input validation and report-file protection strengthened; reported result values and numeric calculations preserved."
+    },
+    {
+      "path": "scripts/evaluate_saved_results.py",
+      "bytes": 8857,
+      "sha256": "5abac201d5a93c02bb708876771bddef57278943924ca01f04994b057fe5aa2b",
+      "source_file": "evaluate_saved_results.py",
+      "source_sha256": "484e2c906d71f9bfe63d5fee911b036367caf1273fb18429cf7edab88650d34c",
+      "transformation": "repository-relative input/output paths; English filenames; additional row-count checks in saved-result evaluator; numerical calculations unchanged",
+      "validation_update": "Input validation and report-file protection strengthened; reported result values and numeric calculations preserved."
+    },
+    {
+      "path": "scripts/evaluate_training_test_summaries.py",
+      "bytes": 2635,
+      "sha256": "287ab64f3ff51d9170d87e51ddd422ef59202ab59fe9b40926e0247d703bf1e5",
+      "origin": "standard-library reaggregation of distributed saved metrics; no training",
+      "validation_update": "Input validation and report-file protection strengthened; reported result values and numeric calculations preserved."
+    },
+    {
+      "path": "scripts/verify_data_links.py",
+      "bytes": 3450,
+      "sha256": "a58485c058a5e10230ea7d811018cb5fee02e1e673d0bd7753ef16243a15b175",
+      "origin": "repository packaging documentation or verification utility",
+      "validation_update": "Input validation and report-file protection strengthened; reported result values and numeric calculations preserved."
+    },
+    {
+      "path": "scripts/verify_package.py",
+      "bytes": 3277,
+      "sha256": "5dfa0c0c8c380198dc4bbf0031f419f1459426c301423ed1a130be7594c26775",
+      "origin": "repository packaging documentation or verification utility",
+      "validation_update": "Input validation and report-file protection strengthened; reported result values and numeric calculations preserved."
+    }
+  ],
+  "release_status": "PUBLIC_RELEASE",
+  "training_test_addition": {
+    "model_evaluations": 2182,
+    "budget_summaries": 51,
+    "neural_training_performed": false,
+    "test_outputs_match_retained_results": true
+  },
+  "data_repository": "https://github.com/HuangheZhang/UpperMyo",
+  "materials_repository": "https://github.com/1410192560/UpperMyo_Review_Materials",
+  "repository_layout": "Separate repositories. Supply downloaded data path with --data-root; saved-result evaluators are independent of the data checkout.",
+  "dataset_manifest": "indices/record_manifest.csv",
+  "package_name": "UpperMyo_Review_Materials"
+}

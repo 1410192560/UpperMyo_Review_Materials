@@ -1,0 +1,72 @@
+{
+  "protocol_version": "channel_ablation_strict_loso_contiguous_none_v4",
+  "created_at": "2026-09-21T14:36:40+08:00",
+  "dataset_sha256": "69111ae9e4fe92494b1519ed12b877c0d376fda3290355968500126f8bd380a9",
+  "script_code_sha256": "8c6cfd2b93e19b8ba48178cdfef1721ea07a6fbe08b809f444ad3216424c7713",
+  "common_code_sha256": "0d28ddbb34cb11f220d00b74ecf5f5fb5026c4406e374081df286e55b79e007a",
+  "protocol": "13 fixed channel configurations evaluated with outer leave-one-subject-out; no channel subset or hyperparameter is selected using outer-test labels",
+  "selection_policy": "confirmatory fixed design: all channels + six leave-one-channel-out + six single-channel configurations",
+  "ranking_policy": "rankings are descriptive only; outer-test rankings are not used to select a channel subset for refitting or for any additional test on the same folds",
+  "preprocessing": "feature StandardScaler and raw-signal channel mean/std are fitted on the 23 outer-training subjects only, then applied unchanged to the held-out subject",
+  "fixed_hyperparameters": {
+    "LDA": {
+      "solver": "svd"
+    },
+    "SVM": {
+      "C": 30.0,
+      "kernel": "rbf",
+      "gamma": "scale"
+    },
+    "RF": {
+      "n_estimators": 800,
+      "class_weight": "balanced_subsample",
+      "max_features": "sqrt",
+      "random_state": 42
+    },
+    "CNN": {
+      "epochs": 120,
+      "lr": 0.001,
+      "weight_decay": 1e-05,
+      "dropout": 0.2,
+      "batch_size": 64
+    },
+    "CORAL": {
+      "epochs": 40,
+      "lr": 0.001,
+      "batch_size": 64
+    },
+    "ProtoNet": {
+      "epochs": 40,
+      "lr": 0.001,
+      "batch_size": 64
+    }
+  },
+  "seed_policy": "deterministic seed derived independently from configuration, outer subject, and model; resume order cannot change deep-model results",
+  "stochastic_repetitions": 1,
+  "outer_subjects": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+  ]
+}

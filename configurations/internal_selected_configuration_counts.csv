@@ -1,0 +1,11 @@
+﻿model,selected_folds,total_outer_folds,configuration_json
+LDA,24,24,"{""shrinkage"":null,""solver"":""svd""}"
+SVM,15,24,"{""C"":30.0,""gamma"":""scale""}"
+SVM,6,24,"{""C"":10.0,""gamma"":""scale""}"
+SVM,3,24,"{""C"":100.0,""gamma"":""scale""}"
+RF,18,24,"{""max_depth"":null,""min_samples_leaf"":1,""n_estimators"":800}"
+RF,6,24,"{""max_depth"":20,""min_samples_leaf"":2,""n_estimators"":800}"
+CNN,24,24,"{""dropout"":0.2,""final_batch_size"":64,""final_epochs"":120,""inner_batch_size"":256,""inner_epochs"":10,""lr"":0.001,""weight_decay"":1e-05}"
+CORAL,17,24,"{""final_batch_size"":64,""final_epochs"":40,""inner_batch_size"":256,""inner_epochs"":6,""lr"":0.001}"
+CORAL,7,24,"{""final_batch_size"":64,""final_epochs"":40,""inner_batch_size"":256,""inner_epochs"":6,""lr"":0.0003}"
+ProtoNet,24,24,"{""final_batch_size"":64,""final_epochs"":40,""inner_batch_size"":256,""inner_epochs"":6,""lr"":0.0003}"

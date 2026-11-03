@@ -1,0 +1,40 @@
+{
+  "csv_encoding": "UTF-8 with optional BOM",
+  "sampling_hz": 1000,
+  "timestamp_unit": "microsecond",
+  "channel_amplitude_unit": "microvolt",
+  "channel_order": [
+    "BB",
+    "TB",
+    "ECR",
+    "ECU",
+    "FCR",
+    "FCU"
+  ],
+  "label_order": [
+    "zq",
+    "zqq",
+    "zsz",
+    "wsz",
+    "wns",
+    "wwz",
+    "wq",
+    "wqq",
+    "none"
+  ],
+  "label_short": [
+    "HO",
+    "EF",
+    "EE",
+    "WE",
+    "UD",
+    "RD",
+    "HC",
+    "WF",
+    "BG"
+  ],
+  "index_start": "zero-based sample, inclusive",
+  "index_end": "zero-based sample, exclusive",
+  "csv_lines": "one-based physical line; header is line 1",
+  "index_time_unit": "second"
+}

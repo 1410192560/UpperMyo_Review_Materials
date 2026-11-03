@@ -1,0 +1,10 @@
+{
+  "rule": "alphabetically first full record for each participant; no metric-based selection",
+  "seed": 20260907,
+  "budget": 10775,
+  "records": {
+    "lk": "lkp3m1_24_m",
+    "nk": "nkp3m1_23_m",
+    "pb": "pbp3m1_24_m"
+  }
+}

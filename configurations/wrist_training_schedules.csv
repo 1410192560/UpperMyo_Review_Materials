@@ -1,0 +1,13 @@
+﻿budget,target_only,fine_tune
+4,to_1e3: 100 epochs,ft_1e4: 20 epochs
+8,to_1e3: 100 epochs,ft_1e4: 20 epochs
+12,to_1e3: 20 epochs,ft_1e4: 100 epochs
+16,to_1e3: 20 epochs,ft_1e4: 100 epochs
+20,to_1e3: 20 epochs,ft_1e4: 100 epochs
+40,to_3e4: 20 epochs,ft_1e4: 50 epochs
+60,to_3e4: 20 epochs,ft_1e4: 50 epochs
+80,to_3e4: 20 epochs,ft_1e4: 50 epochs
+120,target_only_a0_lr0.0003: 20 epochs,fine_tune_a0_lr0.0001: 20 epochs
+200,target_only_a0_lr0.0003: 20 epochs,fine_tune_a0_lr0.0001: 20 epochs
+400,target_only_a0_lr0.0003: 20 epochs,fine_tune_a0_lr0.0001: 20 epochs
+800,target_only_a0_lr0.0003: 20 epochs,fine_tune_a0_lr0.0001: 20 epochs

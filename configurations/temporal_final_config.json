@@ -1,0 +1,179 @@
+{
+  "protocol_id": "UpperMyo_elbow_temporal",
+  "date": "2026-10-31",
+  "channels": [
+    "BB",
+    "TB",
+    "ECR",
+    "ECU",
+    "FCR",
+    "FCU"
+  ],
+  "fs": 1000,
+  "adc_bits": 12,
+  "task": {
+    "labels": {
+      "0": "静息对照",
+      "1": "关联后续肘屈事件"
+    },
+    "horizon_reference": "BB肌电参考",
+    "zero_offset": "检测参考条件",
+    "positive_offset": "向前偏移条件"
+  },
+  "preprocess": {
+    "bandpass_hz": [
+      20,
+      450
+    ],
+    "butterworth_prototype_order": 2,
+    "bandpass_total_order": 4,
+    "notch_hz": 50,
+    "notch_Q": 30,
+    "direction": "causal_forward",
+    "initial_state": "zero_per_continuous_record",
+    "startup_guard": 2000
+  },
+  "onset": {
+    "channel": "BB/channel1",
+    "trailing_rms_samples": 50,
+    "baseline_relative_to_label_start": [
+      -5000,
+      -3000
+    ],
+    "threshold": "median + 3 * 1.4826 * MAD",
+    "search_relative_to_label_start": [
+      0,
+      2500
+    ],
+    "sustained_samples": 50,
+    "reference": "first sample of sustained crossing",
+    "confirmation_delay_samples": 49
+  },
+  "windows": {
+    "length": 200,
+    "step": 50,
+    "interval": "[reference-h-200, reference-h)",
+    "classical_offsets": [
+      0,
+      50,
+      100,
+      150,
+      200,
+      250,
+      300,
+      400,
+      500,
+      750,
+      1000,
+      1500,
+      2000
+    ],
+    "neural_offsets": [
+      0,
+      200,
+      500,
+      1000,
+      2000
+    ],
+    "one_window_per_event_per_offset": true,
+    "require_phase_matched_rest": true
+  },
+  "features": {
+    "order": [
+      "MAV",
+      "WL",
+      "ZC",
+      "SSC",
+      "AR1",
+      "AR2",
+      "AR3",
+      "AR4",
+      "MDF",
+      "MNF"
+    ],
+    "dimension": 60,
+    "deadband_baseline_rms_fraction": 0.02,
+    "AR_order": 4,
+    "AR_ridge_fraction": 1e-06,
+    "welch_window": "hann",
+    "welch_nperseg": 100,
+    "welch_overlap": 50,
+    "welch_nfft": 256,
+    "welch_detrend": "constant",
+    "frequency_band": [
+      20,
+      450
+    ]
+  },
+  "CNN": {
+    "conv_channels": [
+      12,
+      16
+    ],
+    "kernel_sizes": [
+      2,
+      3
+    ],
+    "strides": [
+      2,
+      1
+    ],
+    "padding": [
+      0,
+      0
+    ],
+    "FC": [
+      128,
+      64,
+      2
+    ],
+    "dropout": [
+      0.3,
+      0.2
+    ],
+    "parameters": 11406,
+    "axis": "muscle positions; feature types as input channels"
+  },
+  "BPNN": {
+    "input": 60,
+    "hidden": [
+      128,
+      64
+    ],
+    "output": 2,
+    "dropout": [
+      0,
+      0
+    ],
+    "parameters": 16194
+  },
+  "classification": {
+    "LDA": "pooled covariance, trace-scaled 1e-6 ridge, empirical training priors",
+    "KNN": {
+      "k": 5,
+      "distance": "Euclidean",
+      "vote": "uniform"
+    }
+  },
+  "fit": {
+    "optimizer": "Adam",
+    "lr": 0.001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "batch": 32,
+    "max_epochs": 100,
+    "patience": 15,
+    "min_delta": 0.0001,
+    "seed": 20261030,
+    "inner_folds": 4,
+    "refit_epoch": "rounded median of inner best epochs"
+  },
+  "results": {
+    "reference_file": "../results/temporal_reported_results.csv",
+    "output_dir": "../verification/temporal",
+    "metric": "mean participant accuracy and sample SD (ddof=1)"
+  }
+}

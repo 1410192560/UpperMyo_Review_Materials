@@ -1,0 +1,5 @@
+﻿offset_ms,events,fully_background_windows,fully_action_label_windows,median_end_relative_to_saved_label_ms
+0,165,0,161,1196.0
+500,165,14,144,696.0
+1000,165,46,81,196.0
+2000,165,165,0,-804.0
